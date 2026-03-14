@@ -1,0 +1,20 @@
+name: Scan Roblox Binary
+on: [push, workflow_dispatch]
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run Scanner
+        run: python3 find_offsets.py
+
+      - name: Commit Results
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add offsets.h
+          git commit -m "Update offsets from binary" || echo "No changes"
+          git push
