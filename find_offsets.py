@@ -5,7 +5,9 @@ signatures = {
     "rbx_luau_load": b"\xFD\x7B\x02\xA9\xFD\x83\x00\x91", 
     "rbx_lua_pcall": b"\xFD\x7B\x03\xA9\xFD\x03\x00\x91",
     "rbx_lua_gettop": b"\xFD\x7B\x01\xA9\xF4\x4F\x02\xA9",
+    "rbx_get_task_scheduler": b"\x08\x00\x40\xF9\x08\x01\x40\xF9\x00\x01\x40\xF9",
 }
+
 
 def scan():
     # Make sure the file in your GitHub is named EXACTLY "Roblox"
